@@ -5,10 +5,10 @@ allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ,
 targetGenome = "It was the best of times, it was the blurst of times"
 mutateChance = .05
 pop_size = 500
-# how many of the best entities can breed
-breed_num = 10
-# how many children they produce
-child_num = 50
+# percent of the best entities can breed
+breed_num = .1
+# percent of children they produce
+child_num = .5
 max_gens = 2000
 
 class gen_entity:
@@ -31,10 +31,10 @@ class gen_entity:
             return allowedChars[random.randint(0,len(allowedChars)-1)]
         #mutation can be add a character, remove a character, or random character
         randChoice = random.random()
-        if randChoice <= (1/3):
+        if randChoice <= (1/3) + .01:
             toReturn += allowedChars[random.randint(0,len(allowedChars)-1)]
             toReturn += allowedChars[random.randint(0,len(allowedChars)-1)]
-        elif randChoice <= .67:
+        elif randChoice <= .68:
             toReturn += allowedChars[random.randint(0,len(allowedChars)-1)]
         return toReturn
         
@@ -78,9 +78,9 @@ print("Initial Best Guess: " + entity_array[0].genome)
 print("Initial Fitness: ", entity_array[0].fitness, "\n")
 
 def breed_top_n(n, childNum):
-    for x in range(childNum):
-        parent1 = entity_array[random.randint(0,n-1)]
-        parent2 = entity_array[random.randint(0,n-1)]
+    for x in range(int(childNum*pop_size)):
+        parent1 = entity_array[random.randint(0,(n*pop_size)-1)]
+        parent2 = entity_array[random.randint(0,(n*pop_size)-1)]
         entity_array[pop_size-1-x] = gen_entity(parent1.make_child_genome(parent2))
 
 generationNum = 0
