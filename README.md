@@ -12,7 +12,9 @@ Uses a genetic algorithm to turn a random string into a desired evolutionary tar
 ## Examples
 With targetGenome = "It was the best of times, it was the blurst of times."
 ![Example Run](readme_images/example_run.png)
+
 Plots and a full generation log can be displayed after execution
+
 ![Plot](readme_images/example_plot.png)
 ## Algorithm
 This program uses a genetic algorithm:
