@@ -15,7 +15,7 @@ With targetGenome = "It was the best of times, it was the blurst of times."
 
 Plots and a full generation log can be displayed after execution
 
-![Plot](readme_images/example_plot.png)
+![Plot](readme_images/example_figure.png)
 ## Algorithm
 This program uses a genetic algorithm:
 1. Initially, a population of strings is created, with all random allowed characters and of size near the target.
