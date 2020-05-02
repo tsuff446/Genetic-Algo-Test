@@ -11,6 +11,7 @@ Uses a genetic algorithm to turn a random string into a desired evolutionary tar
 
 ## Examples
 With targetGenome = "It was the best of times, it was the blurst of times."
+
 Plots and a full generation log can be displayed after execution
 
 ## Algorithm
